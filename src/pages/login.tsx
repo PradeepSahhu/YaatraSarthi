@@ -32,11 +32,11 @@ const AuthPage: React.FC<AuthPageProps> = ({ toggleAuth }) => {
         body: JSON.stringify(formData),
       });
       
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }else{
+      // if (!response.ok) {
+      //   throw new Error(`HTTP error! Status: ${response.status}`);
+      // }
         navigate("/itinery");
-      }
+      
       
       const data = await response.json();
       console.log('Success:', data);
