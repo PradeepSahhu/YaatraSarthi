@@ -12,6 +12,7 @@ import { format, addDays, differenceInDays } from 'date-fns';
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
 
+
 const HotelBookingPage = () => {
   const navigate = useNavigate();
 
@@ -403,6 +404,8 @@ const HotelBookingPage = () => {
         <p className="text-blue-100 max-w-xl relative z-10">
           Discover handpicked hotels with exclusive deals and AI-powered recommendations
         </p>
+     
+      
       </div>
 
       {/* Enhanced Search Section */}
@@ -1040,6 +1043,13 @@ const HotelBookingPage = () => {
               <Button className="rounded-l-none">Subscribe</Button>
             </div>
           </div>
+        </div>
+
+        <div className='flex justify-center'>  
+          
+     
+
+        <button className='bg-orange-600 px-5 py-2 rounded-xl m-5' onClick={()=>navigate('/chat')}> chatBot</button>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
           <p>© 2025 Luxury Hotels & Resorts. All rights reserved.</p>

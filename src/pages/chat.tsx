@@ -9,6 +9,8 @@ import {
   Maximize2, Minimize2 
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+
 
 // Environment variable for API key
 // In a real implementation, this would be handled securely through environment variables
@@ -17,6 +19,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent";
 
 const TravelAssistant = () => {
+  const navigate = useNavigate();
   const [messages, setMessages] = useState([
     {
       id: 1,
@@ -160,6 +163,8 @@ const TravelAssistant = () => {
             <Bot className="h-5 w-5 text-white" />
           }
         </div>
+
+      
         <div className={`flex flex-col ${message.type === 'user' ? 'items-end' : 'items-start'}`}>
           <div className={`rounded-lg p-3 ${
             message.type === 'user' 
@@ -319,6 +324,9 @@ const TravelAssistant = () => {
               <Send className="h-5 w-5" />
             </Button>
           </div>
+        </div>
+        <div className='flex justify-center'>
+          <button onClick={()=>navigate('/community')}>Go to Community </button>
         </div>
       </Card>
     </motion.div>
