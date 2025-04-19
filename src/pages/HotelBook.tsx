@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 interface Hotel {
   id: number;
@@ -11,6 +12,7 @@ interface Hotel {
 }
 
 const HotelBookingPage: React.FC = () => {
+  const navigate = useNavigate();
   const [hotels, setHotels] = useState<Hotel[]>([]);
   const [selectedCountry, setSelectedCountry] = useState<string>("");
 
@@ -42,6 +44,8 @@ const HotelBookingPage: React.FC = () => {
         <option value="India">India</option>
         <option value="UK">UK</option>
       </select>
+
+      <button onClick={()=> navigate('/chat')}>Go to Chatbot</button>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {hotels.map((hotel) => (
