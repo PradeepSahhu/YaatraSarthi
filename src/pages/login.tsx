@@ -24,13 +24,13 @@ const AuthPage: React.FC<AuthPageProps> = ({ toggleAuth }) => {
   const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8000/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // const response = await fetch('http://localhost:8000/api/login', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(formData),
+      // });
       
       // if (!response.ok) {
       //   throw new Error(`HTTP error! Status: ${response.status}`);
@@ -38,8 +38,8 @@ const AuthPage: React.FC<AuthPageProps> = ({ toggleAuth }) => {
         navigate("/itinery");
       
       
-      const data = await response.json();
-      console.log('Success:', data);
+      // const data = await response.json();
+      // console.log('Success:', data);
     } catch (error) {
       console.error('Error:', error);
     }
